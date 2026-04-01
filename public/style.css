@@ -1,0 +1,105 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(fonts/ArbFONTS-Montserrat-Arabic-Light.ttf);
+  }
+*{
+    font-family: Montserrat;
+}
+body{
+    background-color: #D72027;
+    margin: 0px;
+
+}
+span{
+    color: #fff;
+}
+
+.contanir{
+    /* display: grid; */
+    /* justify-content: center; */
+    /* align-content: space-between; */
+    text-align: center; 
+
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+
+   
+}
+
+.logo{
+    margin: auto;
+    width:100px;
+    padding: 20px;
+}
+.text-withe{
+color: #fff;
+
+}
+.welcome{
+    margin: auto;
+    width:100px;
+    padding: 20px;
+   
+}
+
+.textform{
+  
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid white;
+   margin-bottom: 15px;
+    width: 80vw ;
+    
+
+}
+.form{
+    text-align: center;
+}
+.idimg{
+width: 100vw;
+}
+
+.text{
+    display: inline-block;
+  width: 80vw;
+  margin-right: auto;
+  margin-left: auto;
+  /* margin-bottom: 2px; */
+}
+
+label{
+    color: #fff;
+}
+
+.btn {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Georgia;
+    color: #ff0000;
+    font-size: 20px;
+    background: #ffffff;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background: #bfbfbf;
+    text-decoration: none;
+  }
+
+  .lang-switch {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.lang-switch select {
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  cursor: pointer;
+}

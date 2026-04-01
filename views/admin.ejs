@@ -1,0 +1,245 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>:: My-Task :: Table Example </title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+    <!-- plugin css file  -->
+    <link rel="stylesheet" href="assets/plugin/datatables/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="assets/plugin/datatables/dataTables.bootstrap5.min.css">
+
+    <!-- project css file  -->
+    <link rel="stylesheet" href="assets/css/my-task.style.min.css">
+</head>
+<body  data-mytask="theme-indigo">
+
+<div id="mytask-layout">
+    
+   <!-- sidebar -->
+   <div class="sidebar px-4 py-4 py-md-5 me-0">
+    <div class="d-flex flex-column h-100">
+        <a href="/admin" class="mb-0 ">
+            <span class="logo-icon">
+                <img src="images/logo.png" width="50" alt="">
+            </span>
+            
+        </a>
+
+
+       
+
+        <!-- Menu: main ul -->
+        <ul class="menu-list flex-grow-1 mt-3">
+
+            <li><a class="m-link" href="/admin">    <i class="icofont-home fs-5"></i> <span>Dashboard</span></a></li>
+
+         
+            
+            </ul>
+
+        
+
+        <!-- Menu: menu collepce btn -->
+        <button type="button" class="btn btn-link sidebar-mini-btn text-light">
+            <span class="ms-2"><i class="icofont-bubble-right"></i></span>
+        </button>
+    </div>
+   </div> 
+
+    <!-- main body area -->
+    <div class="main px-lg-4 px-md-4">
+
+        <!-- Body: Header -->
+        <div class="header">
+            <nav class="navbar py-4">
+                <div class="container-xxl">
+    
+                    <!-- header rightbar icon -->
+                    <div class="h-right d-flex align-items-center mr-5 mr-lg-0 order-1">
+                     
+                        
+                        <div class="dropdown user-profile ml-2 ml-sm-3 d-flex align-items-center">
+                            <div class="u-info me-2">
+                                <p class="mb-0 text-end line-height-sm "><span class="font-weight-bold">Admin</span></p>
+                                <small>Admin</small>
+                            </div>
+                            <a class="nav-link dropdown-toggle pulse p-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static">
+                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/profile_av.png" alt="profile">
+                            </a>
+                            
+                        </div>
+                      
+                    </div>
+    
+                    <!-- menu toggler -->
+                    <button class="navbar-toggler p-0 border-0 menu-toggle order-3" type="button" data-bs-toggle="collapse" data-bs-target="#mainHeader">
+                        <span class="fa fa-bars"></span>
+                    </button>
+    
+                    <!-- main menu Search-->
+                    <div class="order-0 col-lg-4 col-md-4 col-sm-12 col-12 mb-3 mb-md-0 ">
+                        <div class="input-group flex-nowrap input-group-lg">
+                            <!-- <button type="button" class="input-group-text" id="addon-wrapping"><i class="fa fa-search"></i></button>
+                            <input type="search" class="form-control" placeholder="Search" aria-label="search" aria-describedby="addon-wrapping">
+                            <button type="button" class="input-group-text add-member-top" id="addon-wrappingone" data-bs-toggle="modal" data-bs-target="#addUser"><i class="fa fa-plus"></i></button> -->
+                        </div>
+                    </div>
+    
+                </div>
+            </nav>
+        </div>
+
+        <!-- Body: Body -->
+        <div class="body d-flex py-lg-3 py-md-2">
+            <div class="container-xxl">
+                <div class="row align-items-center">
+                    <div class="border-0 mb-4">
+                        <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
+                            <h3 class="fw-bold mb-0">Hlayal Dashboard</h3>
+                        </div>
+                    </div>
+                </div> <!-- Row end  -->
+
+                <div class="row align-item-center">
+                    <div class="col-md-12">
+                       
+                        
+                       
+                       
+                        <div class="card mb-3">
+                            <div class="card-header py-3  bg-transparent border-bottom-0">
+                                <h6 class="mb-0 fw-bold ">Data Table</h6> 
+                            </div>
+                            <div class="card-body">
+                                <table id="patient-table" class="table table-hover align-middle mb-0" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Date</th>
+                                            <th>Name</th>
+                                            <th>Mobile</th>
+                                            <th>City</th>
+                                            <th>المشاركة في نمو العلامة التجارية</th>
+                                            <th> الحصول على حق العلامة التجارية
+                                                (فرنشايز)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <% for(var i=0; i< data.length; i++) {
+                                            num = i + 1;
+                                            
+                                            %>
+
+                                        <tr>
+                                            <td><%= num  %></td>
+                                            <td><%= data[i]['date']  %></td>
+
+                                            <td><%= data[i]['name']  %></td>
+
+                                            <td><%= data[i]['mobile']  %></td>
+
+                                             <td><%= data[i]['city']  %></td>
+
+                                            <td><%= data[i]['c1']  %></td>
+
+                                            <td><%= data[i]['c2']  %></td>
+
+                                           
+                                      
+                                        </tr>
+
+                                        <% } %>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div><!-- Row end  -->
+
+            </div>
+        </div>
+      
+  
+    </div>
+
+    <!-- start: template setting, and more. -->
+	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas_setting" aria-labelledby="offcanvas_setting">
+		<div class="offcanvas-header">
+			<h5 class="offcanvas-title">Template Setting</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		</div>
+		<div class="offcanvas-body d-flex flex-column">
+			<div class="mb-4">
+				<h6>Set Theme Color</h6>
+				<ul class="choose-skin list-unstyled mb-0">
+					<li data-theme="ValenciaRed"><div style="--mytask-theme-color: #D63B38;"></div></li>
+					<li data-theme="SunOrange"><div style="--mytask-theme-color: #F7A614;"></div></li>
+					<li data-theme="AppleGreen"><div style="--mytask-theme-color: #5BC43A;"></div></li>
+					<li data-theme="CeruleanBlue"><div style="--mytask-theme-color: #00B8D6;"></div></li>
+					<li data-theme="Mariner"><div style="--mytask-theme-color: #0066FE;"></div></li>
+					<li data-theme="PurpleHeart" class="active"><div style="--mytask-theme-color: #6238B3;"></div></li>
+					<li data-theme="FrenchRose"><div style="--mytask-theme-color: #EB5393;"></div></li>
+				</ul>
+			</div>
+            <div class="mb-4 flex-grow-1">
+				<h6>Set Theme Light/Dark/RTL</h6>
+				<!-- Theme: Switch Theme -->
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <div class="form-check form-switch theme-switch">
+                            <input class="form-check-input fs-6" type="checkbox" role="switch" id="theme-switch">
+                            <label class="form-check-label mx-2" for="theme-switch">Enable Dark Mode!</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check form-switch theme-rtl">
+                            <input class="form-check-input fs-6" type="checkbox" role="switch" id="theme-rtl">
+                            <label class="form-check-label mx-2" for="theme-rtl">Enable RTL Mode!</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check form-switch monochrome-toggle">
+                            <input class="form-check-input fs-6" type="checkbox" role="switch" id="monochrome">
+                            <label class="form-check-label mx-2" for="monochrome">Monochrome Mode</label>
+                        </div>
+                    </li>
+                </ul>
+			</div>
+			<div class="d-flex">
+				<a href="https://themeforest.net/item/mytask-hr-project-management-admin-template/31974551" class="btn w-100 me-1 py-2 btn-primary">Buy Now</a>
+				<a href="https://themeforest.net/user/pixelwibes/portfolio" class="btn w-100 ms-1 py-2 btn-dark">View Portfolio</a>
+			</div>
+		</div>
+	</div>
+  
+</div>
+
+<!-- Jquery Core Js -->
+<script src="assets/bundles/libscripts.bundle.js"></script>
+
+<!-- Plugin Js-->
+<script src="assets/bundles/dataTables.bundle.js"></script>
+
+<!-- Jquery Page Js -->
+<script src="../js/template.js"></script>
+<script>
+    $(document).ready(function() {
+       $('#patient-table')
+       .addClass( 'nowrap' )
+       .dataTable( {
+           responsive: true,
+           columnDefs: [
+               { targets: [-1, -3], className: 'dt-body-right' }
+           ]
+       });
+   });
+
+</script>
+ 
+</body>
+</html> 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>هليل | Hlayel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="contanir">
+    <!-- زر تغيير اللغة -->
+    <div class="lang-switch">
+      <select id="languageSelector">
+        <option value="ar">🇸🇦 العربية</option>
+        <option value="en">🇬🇧 English</option>
+        <option value="de">🇩🇪 Deutsch</option>
+      </select>
+    </div>
+
+    <img class="logo" src="images/logo.png" alt="Logo">
+    <img class="welcome" src="images/Untitled-3.png" alt="Welcome">
+
+    <div style="margin-bottom: 10px;">
+      <span class="text-withe" data-lang="subtitle">يرجى تعبئة البيانات ليتم التواصل</span>
+    </div>
+
+    <form id="form" action="/" method="POST">
+      <div class="form">
+        <div class="text">
+          <span   data-lang="name_ar">الاسم*:</span>
+        </div>
+        <input required class="textform" name="name" type="text">
+
+        <div class="text">
+          <span  data-lang="contact_ar">رقم التواصل*:</span>
+        </div>
+        <input required class="textform" name="mobile" type="text">
+
+        <div class="text">
+         
+          <span   data-lang="city_ar">المدينة:</span>
+        </div>
+        <input class="textform" name="city" type="text">
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <input type="checkbox" id="c1" name="c1" value="c1">
+        <label for="c1" data-lang="opt1">المشاركة في نمو العلامة التجارية</label><br>
+
+        <input type="checkbox" id="c2" name="c2" value="c2">
+        <label for="c2" data-lang="opt2">الحصول على حق العلامة التجارية (فرنشايز)</label><br>
+      </div>
+
+      <div style="padding-bottom: 10px;">
+        <input type="submit" class="btn" data-lang="submit" >
+      </div>
+    </form>
+
+    <div style="text-align: center;">
+      <a target="_blank" href="https://wa.me/966510101060">
+        <img width="80px" src="images/whatsapp.png" alt="WhatsApp">
+      </a>
+    </div>
+
+    <div>
+      <img class="idimg" src="images/id.png" alt="ID">
+    </div>
+  </div>
+
+  <script src="lang.js"></script>
+</body>
+</html>
