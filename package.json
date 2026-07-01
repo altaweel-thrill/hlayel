@@ -1,21 +1,24 @@
 {
   "name": "hlayal",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hlayal lead form and Firebase-powered admin dashboard",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": " nodemon index.js"
+    "dev": "npm run build:client && node node_modules/nodemon/bin/nodemon.js index.js",
+    "build:client": "esbuild src/firebase-client.js --bundle --minify --target=es2020 --outfile=public/firebase-client.bundle.js",
+    "check": "node --check index.js && node --check public/lang.js && npm run build:client"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
+    "dotenv": "^17.4.2",
     "ejs": "^3.1.9",
     "express": "^4.21.2",
-    "mongoose": "^8.3.1",
-    "nodemailer": "^7.0.2",
-    "nodemon": "^3.0.2",
-    "path": "^0.12.7"
+    "firebase": "^12.15.0",
+    "nodemon": "^3.0.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
   }
 }

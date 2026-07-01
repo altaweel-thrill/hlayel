@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>هليل | Hlayel</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
 
-<body>
+<body data-page="form">
   <div class="contanir">
     <!-- زر تغيير اللغة -->
     <div class="lang-switch">
@@ -25,30 +25,37 @@
       <span class="text-withe" data-lang="subtitle">يرجى تعبئة البيانات ليتم التواصل</span>
     </div>
 
+    <div id="formError" class="form-error" role="alert" <%= error ? '' : 'hidden' %>><%= error || '' %></div>
+
     <form id="form" action="/" method="POST">
+      <input id="languageInput" type="hidden" name="language" value="ar">
+      <div class="website-field" aria-hidden="true" hidden>
+        <label for="website">Website</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
       <div class="form">
         <div class="text">
           <span   data-lang="name_ar">الاسم*:</span>
         </div>
-        <input required class="textform" name="name" type="text">
+        <input required class="textform" name="name" type="text" maxlength="100" autocomplete="name" value="<%= values.name || '' %>">
 
         <div class="text">
           <span  data-lang="contact_ar">رقم التواصل*:</span>
         </div>
-        <input required class="textform" name="mobile" type="text">
+        <input required class="textform" name="mobile" type="tel" maxlength="30" autocomplete="tel" dir="ltr" value="<%= values.mobile || '' %>">
 
         <div class="text">
          
           <span   data-lang="city_ar">المدينة:</span>
         </div>
-        <input class="textform" name="city" type="text">
+        <input class="textform" name="city" type="text" maxlength="100" autocomplete="address-level2" value="<%= values.city || '' %>">
       </div>
 
       <div style="margin-bottom: 20px;">
-        <input type="checkbox" id="c1" name="c1" value="c1">
+        <input type="checkbox" id="c1" name="c1" value="c1" <%= values.c1 === 'c1' ? 'checked' : '' %>>
         <label for="c1" data-lang="opt1">المشاركة في نمو العلامة التجارية</label><br>
 
-        <input type="checkbox" id="c2" name="c2" value="c2">
+        <input type="checkbox" id="c2" name="c2" value="c2" <%= values.c2 === 'c2' ? 'checked' : '' %>>
         <label for="c2" data-lang="opt2">الحصول على حق العلامة التجارية (فرنشايز)</label><br>
       </div>
 
@@ -68,6 +75,8 @@
     </div>
   </div>
 
-  <script src="lang.js"></script>
+  <script src="/lang.js"></script>
+  <script src="/firebase-config.js"></script>
+  <script type="module" src="/firebase-client.bundle.js"></script>
 </body>
 </html>

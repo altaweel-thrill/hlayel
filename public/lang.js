@@ -55,6 +55,8 @@ function setLanguage(lang) {
     }
   });
   localStorage.setItem("lang", lang);
+  const languageInput = document.getElementById("languageInput");
+  if (languageInput) languageInput.value = lang;
 }
 
 langSelector.addEventListener("change", (e) => {
