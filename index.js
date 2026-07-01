@@ -13,14 +13,14 @@ app.use(express.urlencoded({ extended: false, limit: '20kb' }));
 function getFirebaseBrowserSettings() {
   return {
     config: {
-      apiKey: process.env.FIREBASE_API_KEY,
-      authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-      projectId: process.env.FIREBASE_PROJECT_ID,
-      storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-      messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-      appId: process.env.FIREBASE_APP_ID,
+      apiKey: process.env.FIREBASE_API_KEY || 'AIzaSyA57U2yKQDTCStGhpRbqmUXY5YI4TlD148',
+      authDomain: process.env.FIREBASE_AUTH_DOMAIN || 'hlayelfranchise.firebaseapp.com',
+      projectId: process.env.FIREBASE_PROJECT_ID || 'hlayelfranchise',
+      storageBucket: process.env.FIREBASE_STORAGE_BUCKET || 'hlayelfranchise.firebasestorage.app',
+      messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID || '911087124771',
+      appId: process.env.FIREBASE_APP_ID || '1:911087124771:web:9e35735fefd071785e0c96',
     },
-    adminEmail: process.env.ADMIN_EMAIL || '',
+    adminEmail: process.env.ADMIN_EMAIL || 'altaweel@thrillagency.net',
     collection: process.env.FIRESTORE_COLLECTION || 'requests',
   };
 }
